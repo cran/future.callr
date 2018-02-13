@@ -1,0 +1,26 @@
+Package: future.callr
+=====================
+
+Version: 0.2.0 [2018-02-12]
+
+NEW FEATURES:
+
+ o Producing errors of class FutureError where applicable.
+
+DOCUMENTATION:
+
+ o Minor updates to the vignette related to the callr package.
+ 
+
+Version: 0.1.1 [2017-11-18]
+
+BUG FIX:
+
+ o Number of workers in plan(callr, workers = n) was not respected.
+
+
+Version: 0.1.0 [2017-11-16]
+
+NEW FEATURES:
+
+ o Added callr futures. Use plan(callr) or plan(callr, workers = 4L).
