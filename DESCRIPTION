@@ -1,7 +1,7 @@
 Package: future.callr
-Version: 0.3.0
+Version: 0.3.1
 Depends: R (>= 3.2.0), future (>= 1.8.1)
-Imports: callr (>= 2.0.2)
+Imports: callr (>= 2.0.4)
 Suggests: future.apply, listenv, markdown, R.rsp
 VignetteBuilder: R.rsp
 Title: A Future API for Parallel Processing using 'callr'
@@ -14,8 +14,8 @@ URL: https://github.com/HenrikBengtsson/future.callr
 BugReports: https://github.com/HenrikBengtsson/future.callr/issues
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-05-03 18:12:14 UTC; hb
+Packaged: 2018-07-18 08:05:55 UTC; hb
 Author: Henrik Bengtsson [aut, cre, cph]
 Maintainer: Henrik Bengtsson <henrikb@braju.com>
 Repository: CRAN
-Date/Publication: 2018-05-03 18:49:04 UTC
+Date/Publication: 2018-07-18 09:40:03 UTC
