@@ -252,14 +252,12 @@ and <a href="https://cran.r-project.org/package=doFuture">doFuture</a>.</p>
 
 <h3>Each callr future uses a fresh R session</h3>
 
-<p>When using <code>callr</code> futures, each future is resolved in a fresh background R session which ends as soon as the value of the future has been collected.   In contrast, <code>multisession</code> futures are resolved in background R worker sessions that serve multiple futures over their life spans.  The advantage with using a new R process for each future is that it is that the R environment is guaranteed not to be contaminated by previous futures, e.g. memory allocations, finalizers, modified options, and loaded and attached packages.  The disadvantage, is an added overhead of lauching a new R process.
+<p>When using <code>callr</code> futures, each future is resolved in a fresh background R session which ends as soon as the value of the future has been collected.   In contrast, <code>multisession</code> futures are resolved in background R worker sessions that serve multiple futures over their life spans.  The advantage with using a new R process for each future is that it is that the R environment is guaranteed not to be contaminated by previous futures, e.g. memory allocations, finalizers, modified options, and loaded and attached packages.  The disadvantage, is an added overhead of launching a new R process.
 (At the moment, I am neither aware of formal benchmarking of this extra overhead nor of performance comparisons of <code>callr</code> to alternative future backends.)</p>
 
 <h3>More than 125 parallel callr futures</h3>
 
-<p>Another advantage with <code>callr</code> futures compared to <code>multisession</code> futures is that they do not communicate via R (socket) connections.  This avoids the limitation in the number of parallel futures that can be active at any time that <code>multisession</code> futures and <code>cluster</code> futures in general have, which they inherit from <code>SOCKcluster</code> clusters as defined by the parallel package.  The number of parallel futures these can serve is limited by the <a href="https://github.com/HenrikBengtsson/Wishlist-for-R/issues/28">maximum number of open connections in R</a>, which currently is 125 (excluding the three reserved by R itself).  Note that these 125 slots have to be shared with file connections etc.  To increase this limit, R has to be rebuilt from source.  However, since <code>callr</code> futures rely on <a href="https://github.com/r-lib/processx/issues/91">the callr package which does not make use of R-specific connections</a>, there is no limit(*) in the number of background R processes that can be used simulatenously.</p>
-
-<p>(*) On Windows, there is currently <a href="https://github.com/r-lib/processx/issues/91#issuecomment-351214242">a limit of 64 parallel processes</a> but there is a plan to fix this in the callr package.</p>
+<p>Another advantage with <code>callr</code> futures compared to <code>multisession</code> futures is that they do not communicate via R (socket) connections.  This avoids the limitation in the number of parallel futures that can be active at any time that <code>multisession</code> futures and <code>cluster</code> futures in general have, which they inherit from <code>SOCKcluster</code> clusters as defined by the parallel package.  The number of parallel futures these can serve is limited by the <a href="https://github.com/HenrikBengtsson/Wishlist-for-R/issues/28">maximum number of open connections in R</a>, which currently is 125 (excluding the three reserved by R itself).  Note that these 125 slots have to be shared with file connections etc.  To increase this limit, R has to be rebuilt from source.  However, since <code>callr</code> futures rely on <a href="https://github.com/r-lib/processx/issues/91">the callr package which does not make use of R-specific connections</a>, there is no limit in the number of background R processes that can be used simultaneously.</p>
 
 <h3>No ports are used - no port clashes or firewall issues</h3>
 
@@ -282,7 +280,7 @@ demo(&quot;mandelbrot&quot;, package = &quot;future&quot;, ask = FALSE)
 
 <hr/>
 
-<p>Copyright Henrik Bengtsson, 2017-2018</p>
+<p>Copyright Henrik Bengtsson, 2017-2019</p>
 
 </body>
 
