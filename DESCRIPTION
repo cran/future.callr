@@ -1,6 +1,6 @@
 Package: future.callr
-Version: 0.7.0
-Depends: R (>= 3.2.0), future (>= 1.22.1)
+Version: 0.8.0
+Depends: R (>= 3.2.0), future (>= 1.23.0)
 Imports: callr (>= 2.0.3)
 Suggests: globals, future.apply, listenv, markdown, R.rsp
 VignetteBuilder: R.rsp
@@ -15,8 +15,8 @@ URL: https://future.callr.futureverse.org,
 BugReports: https://github.com/HenrikBengtsson/future.callr/issues
 RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2021-11-20 23:18:28 UTC; hb
+Packaged: 2022-04-01 16:05:21 UTC; hb
 Author: Henrik Bengtsson [aut, cre, cph]
 Maintainer: Henrik Bengtsson <henrikb@braju.com>
 Repository: CRAN
-Date/Publication: 2021-11-21 05:20:02 UTC
+Date/Publication: 2022-04-01 17:20:02 UTC
