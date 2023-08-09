@@ -1,10 +1,10 @@
-ca21b1cbbe21fd923eeda019005e5e6e *DESCRIPTION
+8887fca85abcb7b2697a6b6545497743 *DESCRIPTION
 1e60837c581c7ebc0d151abbec45865a *NAMESPACE
-0dc8319ec859c8c5f64c6cc445d8e61d *NEWS.md
+2ee4ad0287ea37765b730b28aa94f5dc *NEWS.md
 c856395e17c07373fa14c21e5c8dc5f1 *R/000.R
 c856395e17c07373fa14c21e5c8dc5f1 *R/000.import.R
 696526f520140af925cc8daf916328b2 *R/001.bquote.R
-3f6e0db2b20a9774a8436f4e71c0d81d *R/CallrFuture-class.R
+539ad533d9fe0eeb73f3d873c4b241e6 *R/CallrFuture-class.R
 8abc2756ac548cee4060d6707f61d23b *R/CallrFutureError-class.R
 b06592d2edc294b1c6d55e5b2d1c3a6d *R/callr.R
 ac39445e1bd10b898178131824d99082 *R/nbrOfFreeWorkers.R
@@ -13,10 +13,10 @@ c9344aae558f642422774c25fde57f6f *R/package.R
 02d2f9f312077b09befd2e7fc410510d *R/waitForWorker.R
 59b1b775e55f0a37e9345ea8c8b92901 *R/with_stealth_rng.R
 a7a4ea7260aaa64eae108ee84736a4a7 *R/zzz.R
-f972e4de604692fcf784027d6d29f983 *build/vignette.rds
-e0b9cc9cb684d56cf081372940cd6bc3 *inst/CITATION
+8babdbeb77170d09875dab920ba6d50e *build/vignette.rds
+e95c71b9cdbeaaa9724b59704dfc3c5a *inst/CITATION
 992ad61df989b4859af8c65d5aab9612 *inst/WORDLIST
-0a00fc2148cbd835c4843348c84f2f02 *inst/doc/future.callr.html
+aff7728c1b586f3f0fa74938fe891dd4 *inst/doc/future.callr.html
 f71569943700a0861642426b9d5e56c7 *inst/doc/future.callr.md.rsp
 cf24fcaaebdc9d99da6ee98569bffb4c *man/CallrFuture.Rd
 a046dacc9e5a79c51770c90045e82dac *man/CallrFutureError.Rd
@@ -25,6 +25,7 @@ a046dacc9e5a79c51770c90045e82dac *man/CallrFutureError.Rd
 a8a7ebc67988c09d19a701e973566d51 *man/print.CallrFuture.Rd
 502cb6dbdf67e298300dfb7ef7eb22d6 *tests/CallrFuture.R
 57c7d1791e240d8bfaf34eccfc57fb10 *tests/callr,launch-failure.R
+7ad5f12297f6b7254941efc6ada9ee55 *tests/callr,worker-termination.R
 7d44ef8435a83e8cb3fca5e74372adac *tests/callr.R
 c41695cd56fc546a3e069740ee35e8cc *tests/demo.R
 0b2788d885680e3c831bc20107482136 *tests/dotdotdot.R
@@ -33,7 +34,7 @@ c41695cd56fc546a3e069740ee35e8cc *tests/demo.R
 397730a6f86fe1f89c2c0045b50063f8 *tests/globals,formulas.R
 2406b962f1bd21eb5d8b32eed67ed18d *tests/globals,manual.R
 0e8449759af67f98f7884d5378971971 *tests/globals,subassignment.R
-bd66439e43b9bfecd54e93fd26561a54 *tests/globals,tricky.R
+8e60396e2ced0212049348297d60f82f *tests/globals,tricky.R
 96801dd0ae8b2de345271f7ed2dc7105 *tests/incl/end.R
 4d755776ff5826705316d4f95b1b4045 *tests/incl/start,load-only.R
 6bbc6f11b114b3dccebc293d9d425c04 *tests/incl/start.R
@@ -42,5 +43,5 @@ bd66439e43b9bfecd54e93fd26561a54 *tests/globals,tricky.R
 5fa432ebe073548b2b382c8d8b0cd9d8 *tests/rng.R
 f8abf00102af79285ed1fc2a91095653 *tests/stdout.R
 6485be7ea6b80011e01d2163fdf18f6a *tests/utils.R
-f44d1e54b5310078b43176c490084702 *tests/zzz,future_lapply.R
+6f35530c192b5581026ad74b11494ddc *tests/zzz,future_lapply.R
 f71569943700a0861642426b9d5e56c7 *vignettes/future.callr.md.rsp

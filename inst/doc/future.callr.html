@@ -1,90 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>A Future for callr</title>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/github.min.css">
-<script src="https://cdn.jsdelivr.net/combine/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js,npm/@xiee/utils/js/load-highlight.js" async></script>
-
-
-
 <style type="text/css">
-body, td {
-  font-family: sans-serif;
-  background-color: white;
-  font-size: 13px;
+/**
+ * Prism.s theme ported from highlight.js's xcode style
+ */
+pre code {
+  padding: 1em;
 }
+.token.comment {
+  color: #007400;
+}
+.token.punctuation {
+  color: #999;
+}
+.token.tag,
+.token.selector {
+  color: #aa0d91;
+}
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #1c00cf;
+}
+.token.property,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #c41a16;
+}
+.token.inserted {
+  background-color: #ccffd8;
+}
+.token.deleted {
+  background-color: #ffebe9;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #9a6e3a;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #836c28;
+}
+.token.function,
+.token.class-name {
+  color: #DD4A68;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #5c2699;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+</style>
+<style type="text/css">
 body {
+  font-family: sans-serif;
   max-width: 800px;
   margin: auto;
   padding: 1em;
   line-height: 1.5;
+  box-sizing: border-box;
 }
-tt, code, pre {
-  font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+body, .footnotes, code { font-size: .9em; }
+li li { font-size: .95em; }
+*, *:before, *:after {
+  box-sizing: inherit;
 }
-a:visited { color: #80007f; }
 pre, img { max-width: 100%; }
-code {
-  font-size: 92%;
-  border: 1px solid #ccc;
+pre, pre:hover {
+  white-space: pre-wrap;
+  word-break: break-all;
 }
-code[class] { background-color: #F8F8F8; }
-code.language-undefined { background-color: inherit; }
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre) > code, code[class] { background-color: #F8F8F8; }
+code.language-undefined, pre > code:not([class]) {
+  background-color: inherit;
+  border: 1px solid #eee;
+}
 table {
   margin: auto;
   border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
 }
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
 blockquote {
-  color:#666;
-  margin:0;
+  color: #666;
+  margin: 0;
   padding-left: 1em;
-  border-left: 0.5em #eee solid;
+  border-left: 0.5em solid #eee;
 }
-hr { border: 1px #ddd dashed; }
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC .numbered li { list-style: none; }
+#TOC .numbered { padding-left: 0; }
+#TOC .numbered ul { padding-left: 1em; }
+table, .body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.footnote-ref a::before { content: "["; }
+.footnote-ref a::after { content: "]"; }
+.footnotes::before {
+  content: "";
+  display: block;
+  max-width: 20em;
+}
 
 @media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    filter:none !important;
-  }
   body {
     font-size: 12pt;
     max-width: 100%;
   }
-  a, a:visited { text-decoration: underline; }
-  hr {
-    visibility: hidden;
-    page-break-before: always;
-  }
-  pre, blockquote {
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
   tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page :left { margin: 15mm 20mm 15mm 10mm; }
-  @page :right { margin: 15mm 10mm 15mm 20mm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  pre { white-space: pre; }
 }
 </style>
-
 <meta name="keywords" content="R, package, vignette, future, synchronous, asynchronous, parallel, cluster, HPC, callr">
 <meta name="author" content="Henrik Bengtsson">
-
 </head>
-
 <body>
-<h1>A Future for callr</h1>
-<h2>Introduction</h2>
+<div class="include-before">
+</div>
+<div class="frontmatter">
+<div class="title"><h1>A Future for callr</h1></div>
+<div class="author"><h2></h2></div>
+<div class="date"><h3></h3></div>
+</div>
+<div class="body">
+<h1 id="a-future-for-callr">A Future for callr</h1>
+<h2 id="introduction">Introduction</h2>
 <p>The <strong><a href="https://cran.r-project.org/package=future">future</a></strong> package provides a generic API for using futures in
 R.  A future is a simple yet powerful mechanism to evaluate an R
 expression and retrieve its value at some point in time.  Futures can
@@ -106,7 +172,7 @@ utilizes the <strong><a href="https://cran.r-project.org/package=callr">callr</a
 and how to work with them.  For further examples on how to use
 futures, see the vignettes of the <strong><a href="https://cran.r-project.org/package=future">future</a></strong> package as well as
 those of <strong><a href="https://cran.r-project.org/package=future.apply">future.apply</a></strong> and <strong><a href="https://cran.r-project.org/package=doFuture">doFuture</a></strong>.</p>
-<h2>Using the callr backend</h2>
+<h2 id="using-the-callr-backend">Using the callr backend</h2>
 <p>The <strong>future.callr</strong> package implements a <strong>future</strong> backend wrapper
 for <strong>callr</strong>.</p>
 <table>
@@ -125,7 +191,7 @@ for <strong>callr</strong>.</p>
 </tr>
 </tbody>
 </table>
-<h3>Each callr future uses a fresh R session</h3>
+<h3 id="each-callr-future-uses-a-fresh-r-session">Each callr future uses a fresh R session</h3>
 <p>When using <code>callr</code> futures, each future is resolved in a fresh
 background R session which ends as soon as the value of the future has
 been collected.  In contrast, <code>multisession</code> futures are resolved in
@@ -137,7 +203,7 @@ modified options, and loaded and attached packages.  The disadvantage,
 is an added overhead of launching a new R process.  (At the moment, I
 am neither aware of formal benchmarking of this extra overhead nor of
 performance comparisons of <code>callr</code> to alternative future backends.)</p>
-<h3>More than 125 parallel callr futures</h3>
+<h3 id="more-than-125-parallel-callr-futures">More than 125 parallel callr futures</h3>
 <p>Another advantage with <code>callr</code> futures compared to <code>multisession</code>
 futures is that they do not communicate via R (socket) connections.
 This avoids the limitation in the number of parallel futures that can
@@ -154,7 +220,7 @@ increase this limit, R has to be rebuilt from source.  However, since
 R-specific connections</a>,
 there is no limit in the number of background R processes that can be
 used simultaneously.</p>
-<h3>No ports are used - no port clashes or firewall issues</h3>
+<h3 id="no-ports-are-used-no-port-clashes-or-firewall-issues">No ports are used - no port clashes or firewall issues</h3>
 <p>A third advantage with <code>callr</code> futures, is that there is not risk for
 port-clashing with other processes on the system when clusters are set
 up (*), because <strong>callr</strong> does not rely on ports.  Furthermore, on
@@ -167,7 +233,7 @@ sockets and therefore no ports are involved.</p>
 <p>(*) To lower the risk for such clashes <code>SOCKcluster</code>:s (of the
 <strong>parallel</strong> package) request random ports, but clashes still occur at
 times.</p>
-<h2>Demos</h2>
+<h2 id="demos">Demos</h2>
 <p>The <strong><a href="https://cran.r-project.org/package=future">future</a></strong> package provides a demo using futures for calculating
 a set of Mandelbrot planes.  The demo does not assume anything about
 what type of futures are used.  <em>The user has full control of how
@@ -177,9 +243,10 @@ demo as:</p>
 plan(callr)
 demo(&quot;mandelbrot&quot;, package = &quot;future&quot;, ask = FALSE)
 </code></pre>
-
-
-<script src="https://cdn.jsdelivr.net/combine/npm/@xiee/utils/js/center-img.min.js" async></script>
+</div>
+<div class="include-after">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
 </body>
-
 </html>
