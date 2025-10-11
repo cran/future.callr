@@ -1,5 +1,5 @@
 Package: future.callr
-Version: 0.10.1
+Version: 0.10.2
 Depends: R (>= 3.4.0), future (>= 1.58.0)
 Imports: parallelly, callr
 Suggests: globals, future.apply, listenv, markdown, R.rsp
@@ -17,11 +17,11 @@ URL: https://future.callr.futureverse.org,
 BugReports: https://github.com/futureverse/future.callr/issues
 Language: en-US
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 NeedsCompilation: no
-Packaged: 2025-07-10 10:13:49 UTC; henrik
+Packaged: 2025-10-11 05:11:21 UTC; hb
 Author: Henrik Bengtsson [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0002-7579-5165>)
 Maintainer: Henrik Bengtsson <henrikb@braju.com>
 Repository: CRAN
-Date/Publication: 2025-07-10 16:50:01 UTC
+Date/Publication: 2025-10-11 05:50:10 UTC

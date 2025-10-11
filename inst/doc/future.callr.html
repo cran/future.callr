@@ -107,7 +107,7 @@ section.footnotes {
   body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
 }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.11/css/prism-xcode.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.14/css/prism-xcode.min.css">
 <meta name="keywords" content="R, package, vignette, future, synchronous, asynchronous, parallel, cluster, HPC, callr">
 <meta name="author" content="Henrik Bengtsson">
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
@@ -128,8 +128,8 @@ to choose from in the <strong><a href="https://cran.r-project.org/package=future
 <p>This package, <strong><a href="https://cran.r-project.org/package=future.callr">future.callr</a></strong>, provides a type of futures that
 utilizes the <strong><a href="https://cran.r-project.org/package=callr">callr</a></strong> package.</p>
 <p>For example,</p>
-<pre><code class="language-r">&gt; library(future.callr)
-&gt; plan(callr)
+<pre><code class="language-r">&gt; library(future)
+&gt; plan(future.callr::callr)
 &gt;
 &gt; x %&lt;-% { Sys.sleep(5); 3.14 }
 &gt; y %&lt;-% { Sys.sleep(5); 2.71 }
@@ -206,8 +206,8 @@ a set of Mandelbrot planes.  The demo does not assume anything about
 what type of futures are used.  <em>The user has full control of how
 futures are evaluated</em>.  For instance, to use <code>callr</code> futures, run the
 demo as:</p>
-<pre><code class="language-r">library(future.callr)
-plan(callr)
+<pre><code class="language-r">library(future)
+plan(future.callr::callr)
 demo(&quot;mandelbrot&quot;, package = &quot;future&quot;, ask = FALSE)
 </code></pre>
 </div>
