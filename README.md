@@ -1,23 +1,10 @@
-<%@meta language="R-vignette" content="--------------------------------
-%\VignetteIndexEntry{A Future for callr}
-%\VignetteAuthor{Henrik Bengtsson}
-%\VignetteKeyword{R}
-%\VignetteKeyword{package}
-%\VignetteKeyword{vignette}
-%\VignetteKeyword{future}
-%\VignetteKeyword{synchronous}
-%\VignetteKeyword{asynchronous}
-%\VignetteKeyword{parallel}
-%\VignetteKeyword{cluster}
-%\VignetteKeyword{HPC}
-%\VignetteKeyword{callr}
-%\VignetteEngine{R.rsp::rsp}
-%\VignetteTangle{FALSE}
---------------------------------------------------------------------"%>
-<%
-options(mc.cores = 2L)
-%>
-# A Future for callr
+
+
+<div id="badges"><!-- pkgdown markup -->
+<a href="https://CRAN.R-project.org/web/checks/check_results_future.callr.html"><img border="0" src="https://www.r-pkg.org/badges/version/future.callr" alt="CRAN check status"/></a> <a href="https://github.com/futureverse/future.callr/actions?query=workflow%3AR-CMD-check"><img border="0" src="https://github.com/futureverse/future.callr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop" alt="R CMD check status"/></a>  <a href="https://github.com/futureverse/future.callr/actions?query=workflow%3Afuture_tests"><img border="0" src="https://github.com/futureverse/future.callr/actions/workflows/future_tests.yaml/badge.svg?branch=develop" alt="future.tests checks status"/></a>   <a href="https://app.codecov.io/gh/futureverse/future.callr"><img border="0" src="https://codecov.io/gh/futureverse/future.callr/branch/develop/graph/badge.svg" alt="Coverage Status"/></a> 
+</div>
+
+# future.callr: A Future API for Parallel Processing using 'callr' 
 
 ## Introduction
 
@@ -132,3 +119,21 @@ demo("mandelbrot", package = "future", ask = FALSE)
 [future.callr]: https://cran.r-project.org/package=future.callr
 [future.apply]: https://cran.r-project.org/package=future.apply
 [doFuture]: https://cran.r-project.org/package=doFuture
+
+## Installation
+R package future.callr is available on [CRAN](https://cran.r-project.org/package=future.callr) and can be installed in R as:
+```r
+install.packages("future.callr")
+```
+
+
+### Pre-release version
+
+To install the pre-release version that is available in Git branch `develop` on GitHub, use:
+```r
+remotes::install_github("futureverse/future.callr", ref="develop")
+```
+This will install the package from source.  
+
+<!-- pkgdown-drop-below -->
+
